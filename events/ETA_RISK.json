@@ -1,0 +1,7 @@
+{
+  "event_type": "ETA_RISK",
+  "timestamp": "",
+  "vehicle_id": "",
+  "eta_minutes": 0,
+  "risk_level": "medium"
+}
