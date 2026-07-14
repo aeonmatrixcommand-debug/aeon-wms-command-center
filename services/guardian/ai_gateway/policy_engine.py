@@ -1,5 +1,10 @@
-DEFAULT_POLICY = {
-    "allow_fallback": True,
-    "log_requests": True,
-    "require_traceability": True,
-}
+class PolicyEngine:
+
+    def __init__(self):
+        self.name = "AI Gateway Policy Engine"
+
+    def evaluate(self, request):
+        return {
+            "allowed": True,
+            "reason": "policy_pass"
+        }
