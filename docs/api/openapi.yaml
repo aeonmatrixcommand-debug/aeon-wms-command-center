@@ -1,0 +1,59 @@
+openapi: 3.0.3
+
+info:
+  title: AEON MATRIX WMS Command Center API
+  version: 1.0.0
+  description: Enterprise AI Logistics Command Platform API
+
+servers:
+  - url: http://localhost:8000
+
+paths:
+
+  /api/v1/events:
+    post:
+      summary: Submit telemetry event
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/TelemetryEvent'
+      responses:
+        "200":
+          description: Event accepted
+
+  /api/v1/ai/analyze:
+    post:
+      summary: AI Event Analysis
+      responses:
+        "200":
+          description: AI decision response
+
+
+components:
+
+  schemas:
+
+    TelemetryEvent:
+      type: object
+      properties:
+        event_id:
+          type: string
+          example: EVT-001
+
+        event_type:
+          type: string
+          enum:
+            - ORDER_CREATED
+            - GPS_UPDATED
+            - STOCK_SHORTAGE
+            - POLICY_VIOLATION
+            - ETA_RISK
+
+        timestamp:
+          type: string
+          format: date-time
+
+        payload:
+          type: object
