@@ -1,0 +1,7 @@
+{
+  "event_type": "STOCK_SHORTAGE",
+  "timestamp": "",
+  "sku": "",
+  "requested_qty": 0,
+  "available_qty": 0
+}

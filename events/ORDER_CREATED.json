@@ -1,0 +1,8 @@
+{
+  "event_type": "ORDER_CREATED",
+  "timestamp": "",
+  "order_id": "",
+  "customer_id": "",
+  "channel": "",
+  "priority": "normal"
+}
