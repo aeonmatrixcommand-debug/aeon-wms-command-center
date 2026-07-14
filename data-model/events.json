@@ -1,0 +1,38 @@
+{
+  "events": [
+    {
+      "name": "INVENTORY_TRANSITION",
+      "purpose": "No Scan No Move Control",
+      "fields": [
+        "sku_id",
+        "source_location",
+        "target_location",
+        "lpn_id",
+        "operator_id",
+        "status"
+      ]
+    },
+    {
+      "name": "TASK_EXECUTION",
+      "purpose": "Labor Intelligence",
+      "fields": [
+        "task_id",
+        "task_type",
+        "assigned_to",
+        "priority",
+        "latency_metric"
+      ]
+    },
+    {
+      "name": "DOCK_GATE_STATUS",
+      "purpose": "Transport Intelligence",
+      "fields": [
+        "dock_id",
+        "vehicle_id",
+        "eta",
+        "status",
+        "dwell_time_alert"
+      ]
+    }
+  ]
+}
