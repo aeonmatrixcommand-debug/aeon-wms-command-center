@@ -1,10 +1,20 @@
-from .provider.openai_provider import OpenAIProvider
-from .provider.gemini_provider import GeminiProvider
+def get_provider(policy, registry=None):
 
-PROVIDERS = {
-    "openai": OpenAIProvider(),
-    "gemini": GeminiProvider(),
-}
+    # Backward compatibility Sprint 62
+    if registry is None:
+        return {
+            "name": policy,
+            "status": "available"
+        }
 
-def get_provider(name: str):
-    return PROVIDERS.get(name.lower())
+    # Sprint 63 Governance Routing
+    if policy.risk_score > 80:
+        return registry.get("secure")
+
+    for name, data in registry.providers.items():
+        metadata = data["metadata"]
+
+        if metadata.get("latency", 999) < 100:
+            return data
+
+    return registry.get("default")
