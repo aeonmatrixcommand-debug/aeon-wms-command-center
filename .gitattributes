@@ -1,0 +1,3 @@
+# Exclude setup/bootstrap scripts from GitHub language statistics
+setup_aeon_matrix_sprint62.sh linguist-vendored
+scripts/*.sh linguist-vendored

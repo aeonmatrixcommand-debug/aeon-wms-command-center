@@ -1,0 +1,8 @@
+{
+  "event_type": "GPS_UPDATED",
+  "timestamp": "",
+  "vehicle_id": "",
+  "latitude": 0,
+  "longitude": 0,
+  "speed": 0
+}
